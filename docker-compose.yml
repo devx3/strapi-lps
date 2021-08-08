@@ -3,7 +3,8 @@ version: "3.8"
 services:
   strapi-lps:
     image: strapi/strapi
-    env_file: ./app/.env
+    env_file:
+      - ./app/.env
     environment:
       DATABASE_CLIENT: mongo
       DATABASE_NAME: ${DATABASE_NAME}
