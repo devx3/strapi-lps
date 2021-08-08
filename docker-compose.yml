@@ -2,8 +2,8 @@ version: "3.8"
 
 services:
   strapi-lps:
-    context:
-      build: .
+    build: 
+        context: .
     environment:
       DATABASE_CLIENT: mongo
       DATABASE_NAME: ${DATABASE_NAME}
@@ -12,8 +12,6 @@ services:
       CLOUDINARY_NAME: ${CLOUDINARY_NAME}
       CLOUDINARY_KEY: ${CLOUDINARY_KEY}
       CLOUDINARY_SECRET: ${CLOUDINARY_SECRET}
-    volumes:
-      - ./app:/srv/app
     ports:
       - "1337:1337"
     networks:

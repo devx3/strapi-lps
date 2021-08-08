@@ -1,11 +1,18 @@
-FROM strapi/strapi
+FROM strapi/base
 
+# Define Workdir
 WORKDIR /srv/app
+
+# Install deps
 COPY ./app/package.json ./
-COPY ./app/yarn.lock ./
-COPY ./app .
 RUN yarn install
 
-RUN yarn build
+# Bundle app source
+COPY ./app .
+
+# Expose port
 EXPOSE 1337
-CMD ["yarn", "start"]
+
+# Build & Run
+RUN yarn build
+CMD ["yarn",  "start"]
