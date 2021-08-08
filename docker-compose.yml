@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+    strapi-lps:
+        image: strapi/strapi
+        environment: 
+            DATABASE_CLIENT: mongo
+            DATABASE_NAME: strapi-lps
+            DATABASE_HOST: 172.20.0.2
+            DATABASE_PORT: 27017
+
+        volumes:
+            - ./app:/srv/app
+        ports:
+            - "1337:1337"
+        networks:
+            - local-network
+
+networks:
+    local-network:
+        driver: bridge
+        external: true
+        name: local-network
