@@ -2,8 +2,23 @@
   "collectionName": "components_menu_menu_items",
   "info": {
     "name": "menu_item",
-    "icon": "unlink"
+    "icon": "unlink",
+    "description": ""
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "new_tab": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
 }
